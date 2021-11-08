@@ -35,7 +35,6 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     public void registration(View view) {
-
         startActivity(new Intent(WelcomeActivity.this, RegistrationActivity.class));
     }
 }
