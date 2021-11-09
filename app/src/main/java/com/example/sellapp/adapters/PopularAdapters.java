@@ -48,6 +48,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         ImageView popImg;
         TextView name, description, rating, discount;
 

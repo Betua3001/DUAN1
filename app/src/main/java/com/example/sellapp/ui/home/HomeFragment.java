@@ -1,5 +1,6 @@
 package com.example.sellapp.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.sellapp.R;
 import com.example.sellapp.adapters.HomeCategoryAdapters;
@@ -35,6 +37,7 @@ public class HomeFragment extends Fragment {
     View view;
     ProgressBar progressBar;
     ScrollView scrollView;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     RecyclerView popRec, homeCatRec, recomRec;
     FirebaseFirestore db;
@@ -61,6 +64,7 @@ public class HomeFragment extends Fragment {
         recomRec = view.findViewById(R.id.recommended_rec);
         scrollView = view.findViewById(R.id.scroll_view);
         progressBar = view.findViewById(R.id.progressbar);
+        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
 
         //
         progressBar.setVisibility(View.VISIBLE);
@@ -139,6 +143,14 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+        //Kéo xuống refresh lại trang
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         return view;
     }
 }
