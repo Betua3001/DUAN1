@@ -8,38 +8,38 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.sellapp.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.sellapp.ui.profile.ProfileFragment"
-        android:label="Profile"
+        android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_category"
         android:name="com.example.sellapp.ui.category.CategoryFragment"
-        android:label="Category"
+        android:label="@string/category"
         tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/nav_offers"
         android:name="com.example.sellapp.OffersFragment"
-        android:label="Offers"
+        android:label="@string/offers"
         tools:layout="@layout/fragment_offers" />
     <fragment
         android:id="@+id/nav_new_products"
         android:name="com.example.sellapp.NewProductsFragment"
-        android:label="New Products"
+        android:label="@string/new_products"
         tools:layout="@layout/fragment_new_products" />
     <fragment
         android:id="@+id/nav_my_orders"
         android:name="com.example.sellapp.MyOrdersFragment"
-        android:label="My Orders"
+        android:label="@string/my_orders"
         tools:layout="@layout/fragment_my_orders" />
     <fragment
         android:id="@+id/nav_my_carts"
         android:name="com.example.sellapp.MyCartsFragment"
-        android:label="My Carts"
+        android:label="@string/my_carts"
         tools:layout="@layout/fragment_my_carts" />
 </navigation>

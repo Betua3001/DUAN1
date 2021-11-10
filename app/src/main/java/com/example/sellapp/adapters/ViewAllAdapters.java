@@ -56,7 +56,7 @@ public class ViewAllAdapters extends RecyclerView.Adapter<ViewAllAdapters.ViewHo
             public void onClick(View v) {
                 Intent i = new Intent(context, DetailedActivity.class);
                 //Lấy miêu tả
-                i.putExtra("detail",vaList.get(position).getType());
+                i.putExtra("detail",vaList.get(position));
                 context.startActivity(i);
             }
         });

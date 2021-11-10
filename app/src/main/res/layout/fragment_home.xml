@@ -38,7 +38,7 @@
                     android:drawableLeft="@drawable/ic_baseline_search_24"
                     android:drawablePadding="5dp"
                     android:elevation="3dp"
-                    android:hint="Search your item here..."
+                    android:hint="@string/search"
                     android:padding="13dp" />
 
                 <LinearLayout
@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/alice"
-                        android:text="Popular Products"
+                        android:text="@string/popular_products"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/alice"
-                        android:text="Explore Products"
+                        android:text="@string/explore_products"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -128,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/alice"
-                        android:text="Recommended"
+                        android:text="@string/recommended"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

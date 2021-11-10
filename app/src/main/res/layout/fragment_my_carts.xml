@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alice"
-            android:text="Your Carts Is Empty"
+            android:text="@string/your_carts_is_empty"
             android:textSize="22sp"
             android:textColor="@color/LimeGreen"
             app:layout_constraintBottom_toBottomOf="parent"

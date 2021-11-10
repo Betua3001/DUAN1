@@ -7,9 +7,39 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Đặt tên-->
+    <string name="home">Home</string>
+    <string name="detailed_toolbar">Detailed Products</string>
+    <string name="description">Description</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="added_to_cart">Added To Cart</string>
+    <string name="login">Login</string>
+    <string name="dont_have_an_account">Don\'t Have An Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already Have An Account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="registration">Registration</string>
+    <string name="profile">Profile</string>
+    <string name="category">Category</string>
+    <string name="offers">Offers</string>
+    <string name="new_products">New Products</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_carts">My Carts</string>
+    <string name="view_all_products">View All Products</string>
+    <string name="welcome">We Are Happy To Have You!Get Ready To Buy Fresh and Freeze, Grocery, and Anything You Want.</string>
+    <string name="explore_us">Explore Us</string>
+    <string name="welcome_to">Welcome To Shopping App</string>
+    <string name="popular_products">Popular Products</string>
+    <string name="recommended">Recommended</string>
+    <string name="explore_products">Explore Products</string>
+    <string name="search">Search your item here...</string>
+    <string name="your_carts_is_empty">Your Carts Is Empty</string>
+    <string name="havent_purchased">You Haven\'t Purchased Anything Yet!</string>
+    <string name="no_new_products">Sorry There Is No New Products Yet!</string>
+    <string name="your_name">Your name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_address">Your Address</string>
+    <string name="your_phone">Your Phone</string>
+    <string name="price">"Price(VNĐ) : "</string>
 </resources>
