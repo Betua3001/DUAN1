@@ -77,6 +77,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Password Length must be greater then 6 letter", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
         //Login User
         auth.signInWithEmailAndPassword(userEmail,userPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

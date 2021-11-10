@@ -53,9 +53,7 @@ public class HomeFragment extends Fragment {
     List<RecommendedModel> recomList;
     RecommendedAdapters recomAdapters;
 
-    //nhập
 
-    // nhập ttttt
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
