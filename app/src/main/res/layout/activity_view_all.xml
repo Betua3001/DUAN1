@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.ViewAllActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/view_all_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/LimeGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:title="View All Products"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/view_all_rec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/view_all_toolbar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

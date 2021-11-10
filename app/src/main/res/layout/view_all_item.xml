@@ -13,8 +13,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/nav_cat_img"
-            android:scaleType="centerInside"
+            android:id="@+id/view_img"
+            android:scaleType="centerCrop"
             android:src="@drawable/fruits"
             android:layout_width="150dp"
             android:layout_height="150dp"/>
@@ -27,11 +27,11 @@
 
             <TextView
                 android:fontFamily="@font/alice"
-                android:id="@+id/nav_cat_name"
+                android:id="@+id/view_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -39,7 +39,7 @@
 
             <TextView
                 android:fontFamily="@font/alice"
-                android:id="@+id/nav_cat_des"
+                android:id="@+id/view_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description"
@@ -57,16 +57,17 @@
                     android:fontFamily="@font/alice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Price(VNĐ) :"
-                    android:textSize="20sp"
+                    android:text="Price(VNĐ) : "
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/view_price"
                     android:fontFamily="@font/alice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20000"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -82,7 +83,7 @@
                     android:src="@drawable/ratingbar"
                     android:layout_marginLeft="-5dp"/>
                 <TextView
-                    android:id="@+id/pop_rating"
+                    android:id="@+id/view_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
@@ -93,12 +94,11 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
 
         </LinearLayout>
 

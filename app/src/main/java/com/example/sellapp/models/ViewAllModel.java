@@ -1,20 +1,25 @@
 package com.example.sellapp.models;
 
-public class RecommendedModel {
+import java.io.Serializable;
+
+public class ViewAllModel implements Serializable {
+
     String name;
+    String description;
+    String type;
     String img_url;
     String rating;
-    String description;
     int price;
 
-    public RecommendedModel() {
+    public ViewAllModel() {
     }
 
-    public RecommendedModel(String name, String img_url, String rating, String description, int price) {
+    public ViewAllModel(String name, String description, String type, String img_url, String rating, int price) {
         this.name = name;
+        this.description = description;
+        this.type = type;
         this.img_url = img_url;
         this.rating = rating;
-        this.description = description;
         this.price = price;
     }
 
@@ -24,6 +29,22 @@ public class RecommendedModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getImg_url() {
@@ -40,14 +61,6 @@ public class RecommendedModel {
 
     public void setRating(String rating) {
         this.rating = rating;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getPrice() {

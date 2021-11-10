@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sellapp">
         <activity
+            android:name=".activities.DetailedActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity android:name=".activities.WelcomeActivity">
@@ -21,7 +24,7 @@
         </activity>
         <activity android:name=".activities.RegistrationActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
