@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.sellapp.R;
-import com.example.sellapp.adapters.ViewAllAdapters;
+import com.example.sellapp.adapters.ViewAllAdapter;
 import com.example.sellapp.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +23,7 @@ import java.util.List;
 public class ViewAllActivity extends AppCompatActivity {
 
     RecyclerView rv;
-    ViewAllAdapters vaAdapter;
+    ViewAllAdapter vaAdapter;
     List<ViewAllModel> vaModelList;
     Toolbar toolbar;
 
@@ -45,23 +45,22 @@ public class ViewAllActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         vaModelList = new ArrayList<>();
-        vaAdapter = new ViewAllAdapters(this,vaModelList);
+        vaAdapter = new ViewAllAdapter(this, vaModelList);
         rv.setAdapter(vaAdapter);
 
         //Getting Fruits
-        if(type != null && type.equalsIgnoreCase("fruits")){
-            db.collection("AllProducts").whereEqualTo("type","fruits").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        if (type != null && type.equalsIgnoreCase("fruits")) {
+            db.collection("AllProducts").whereEqualTo("type", "fruits").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
 
                         ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
                         vaModelList.add(vaModel);
                         vaAdapter.notifyDataSetChanged();
 
                     }
-
                 }
             });
         }

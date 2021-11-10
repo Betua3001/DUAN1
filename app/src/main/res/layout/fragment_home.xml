@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:id="@+id/swipe_home"
     android:background="#F3F1F1"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".fragments.HomeFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

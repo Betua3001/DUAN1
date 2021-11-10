@@ -22,10 +22,10 @@
     <string name="registration">Registration</string>
     <string name="profile">Profile</string>
     <string name="category">Category</string>
-    <string name="offers">Offers</string>
-    <string name="new_products">New Products</string>
-    <string name="my_orders">My Orders</string>
-    <string name="my_carts">My Carts</string>
+    <string name="offer">Offer</string>
+    <string name="new_product">New Product</string>
+    <string name="my_order">My Order</string>
+    <string name="my_cart">My Cart</string>
     <string name="view_all_products">View All Products</string>
     <string name="welcome">We Are Happy To Have You!Get Ready To Buy Fresh and Freeze, Grocery, and Anything You Want.</string>
     <string name="explore_us">Explore Us</string>
@@ -42,4 +42,11 @@
     <string name="your_address">Your Address</string>
     <string name="your_phone">Your Phone</string>
     <string name="price">"Price(VNĐ) : "</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="product_name">Product Name :</string>
+    <string name="product_price">Product Price :</string>
+    <string name="current_date">Current Date:</string>
+    <string name="current_time">Current Time:</string>
+    <string name="total_price">Total Price:</string>
+    <string name="total_quantity">Total Quantity</string>
 </resources>

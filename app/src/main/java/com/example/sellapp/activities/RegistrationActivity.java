@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     Button signUp;
-    EditText name,email,password;
+    EditText name, email, password;
     TextView signIn;
 
     FirebaseAuth auth;
@@ -64,50 +64,50 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
     }
+
     private void createUser() {
 
         String userName = name.getText().toString();
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
         //Bắt lỗi
-        if (TextUtils.isEmpty(userName)){
+        if (TextUtils.isEmpty(userName)) {
             Toast.makeText(this, "Name is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (TextUtils.isEmpty(userEmail)){
+        if (TextUtils.isEmpty(userEmail)) {
             Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (TextUtils.isEmpty(userPassword)){
+        if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (userPassword.length() < 6){
+        if (userPassword.length() < 6) {
             Toast.makeText(this, "Password length must be greater then 6 letter", Toast.LENGTH_SHORT).show();
             return;
         }
 
         //Create User
-        auth.createUserWithEmailAndPassword(userEmail,userPassword)
+        auth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                            UserModel userModel = new UserModel(userName,userEmail,userPassword);
+                            UserModel userModel = new UserModel(userName, userEmail, userPassword);
                             String id = task.getResult().getUser().getUid();
                             database.getReference().child("Users").child(id).setValue(userModel);
                             progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(RegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegistrationActivity.this, WelcomeActivity.class));
-                        }
-                        else {
+                        } else {
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(RegistrationActivity.this, "Error:"+task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistrationActivity.this, "Error:" + task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

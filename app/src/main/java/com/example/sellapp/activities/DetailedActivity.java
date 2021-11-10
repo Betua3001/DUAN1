@@ -135,7 +135,7 @@ public class DetailedActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calForDate.getTime());
 
         final HashMap<String, Object> cartMap = new HashMap<>();
-        //Tạo bảng trên firebase
+        //Tạo bảng trên FirebaseFirestore
         cartMap.put("productName", vaModel.getName());
         cartMap.put("productPrice", price.getText().toString());
         cartMap.put("currentDate", saveCurrentDate);

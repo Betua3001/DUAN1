@@ -19,22 +19,19 @@
         <item
             android:id="@+id/nav_offers"
             android:icon="@drawable/ic_baseline_local_offer_24"
-            android:title="@string/offers" />
+            android:title="@string/offer" />
         <item
             android:id="@+id/nav_new_products"
             android:icon="@drawable/autorenew"
-            android:title="@string/new_products" />
+            android:title="@string/new_product" />
         <item
             android:id="@+id/nav_my_orders"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
-            android:title="@string/my_orders" />
+            android:title="@string/my_order" />
         <item
             android:id="@+id/nav_my_carts"
             android:icon="@drawable/mycart"
-            android:title="@string/my_carts" />
-
-
-
+            android:title="@string/my_cart" />
 
     </group>
 </menu>

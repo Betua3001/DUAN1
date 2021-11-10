@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     Button signIn;
-    EditText email,password;
+    EditText email, password;
     TextView signUp;
 
     FirebaseAuth auth;
@@ -64,34 +64,32 @@ public class LoginActivity extends AppCompatActivity {
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
 
-        if (TextUtils.isEmpty(userEmail)){
+        if (TextUtils.isEmpty(userEmail)) {
             Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (TextUtils.isEmpty(userPassword)){
+        if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (userPassword.length() < 6){
+        if (userPassword.length() < 6) {
             Toast.makeText(this, "Password Length must be greater then 6 letter", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
         //Login User
-        auth.signInWithEmailAndPassword(userEmail,userPassword)
+        auth.signInWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        }else {
+                        } else {
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(LoginActivity.this, "Error"+task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

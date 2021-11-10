@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
         // Chuyển fragment
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_profile, R.id.nav_category,R.id.nav_offers,R.id.nav_new_products,
-                R.id.nav_my_orders,R.id.nav_my_carts)
+                R.id.nav_home, R.id.nav_profile, R.id.nav_category, R.id.nav_offers, R.id.nav_new_products,
+                R.id.nav_my_orders, R.id.nav_my_carts)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Gán menu vào action bar

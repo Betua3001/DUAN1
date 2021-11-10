@@ -23,13 +23,14 @@ public class WelcomeActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
-        if (auth.getCurrentUser() != null){
+        if (auth.getCurrentUser() != null) {
             progressBar.setVisibility(View.VISIBLE);
             startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
             Toast.makeText(this, "Please wait you are already logged in", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
+
     public void login(View view) {
         startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
     }
