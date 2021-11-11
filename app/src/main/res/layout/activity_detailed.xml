@@ -7,7 +7,7 @@
     tools:context=".activities.DetailedActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/detailed_toolbar"
+        android:id="@+id/nav_cat_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Lime"
@@ -25,7 +25,7 @@
         android:src="@drawable/myorder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailed_toolbar"/>
+        app:layout_constraintTop_toBottomOf="@+id/nav_cat_toolbar"/>
 
     <TextView
         android:id="@+id/detailed_price"
@@ -73,7 +73,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailed_price" />
+        app:layout_constraintTop_toBottomOf="@+id/detailed_price"/>
 
     <TextView
         android:id="@+id/detailed_des"
@@ -140,7 +140,7 @@
         android:textColor="@color/White"
         android:background="@drawable/btn_bg_detailed"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/detailed_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/nav_cat_toolbar"
         app:layout_constraintTop_toTopOf="@+id/relativeLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

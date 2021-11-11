@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.sellapp.R;
 import com.example.sellapp.adapters.ViewAllAdapter;
@@ -26,6 +28,7 @@ public class ViewAllActivity extends AppCompatActivity {
     ViewAllAdapter vaAdapter;
     List<ViewAllModel> vaModelList;
     Toolbar toolbar;
+    ProgressBar progressBar;
 
     FirebaseFirestore db;
 
@@ -40,8 +43,14 @@ public class ViewAllActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //
+        progressBar = findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.VISIBLE);
+
+
         String type = getIntent().getStringExtra("type");
         rv = findViewById(R.id.view_all_rec);
+        rv.setVisibility(View.GONE);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         vaModelList = new ArrayList<>();
@@ -59,7 +68,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
                         vaModelList.add(vaModel);
                         vaAdapter.notifyDataSetChanged();
-
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
                     }
                 }
             });

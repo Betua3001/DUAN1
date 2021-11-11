@@ -1,6 +1,7 @@
 package com.example.sellapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sellapp.R;
+import com.example.sellapp.activities.DetailedActivity;
+import com.example.sellapp.activities.NavCategoryActivity;
 import com.example.sellapp.models.NavCategoryModel;
 
 import java.util.List;
@@ -39,6 +42,17 @@ public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.
         holder.name.setText(ncList.get(position).getName());
         holder.description.setText(ncList.get(position).getDescription());
         holder.discount.setText(ncList.get(position).getDiscount());
+
+        //Chuyển sang NavCategory Activity
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, NavCategoryActivity.class);
+                //Lấy miêu tả
+                i.putExtra("type", ncList.get(position).getType());
+                context.startActivity(i);
+            }
+        });
 
     }
 

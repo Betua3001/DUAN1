@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MyCartFragment">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint1"
@@ -46,13 +52,13 @@
         >
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/total_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/LimeGreen"
             android:fontFamily="@font/alice"
             android:padding="10dp"
-            android:text="Total Price(VNĐ) : 300000"
+            android:text="Total Bill: 0 VNĐ"
             android:textAlignment="center"
             android:textColor="@color/White"
             android:textSize="28sp"
@@ -71,7 +77,7 @@
             app:layout_constraintVertical_bias="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/total_amount" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buy_now"
@@ -89,4 +95,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</RelativeLayout>

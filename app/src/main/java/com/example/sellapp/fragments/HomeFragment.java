@@ -36,7 +36,6 @@ public class HomeFragment extends Fragment {
     View view;
     ProgressBar progressBar;
     ScrollView scrollView;
-    SwipeRefreshLayout swipeRefreshLayout;
 
     RecyclerView popRec, homeCatRec, recomRec;
     FirebaseFirestore db;
@@ -63,7 +62,6 @@ public class HomeFragment extends Fragment {
         recomRec = view.findViewById(R.id.recommended_rec);
         scrollView = view.findViewById(R.id.scroll_view);
         progressBar = view.findViewById(R.id.progressbar);
-        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
 
         //
         progressBar.setVisibility(View.VISIBLE);
@@ -142,14 +140,6 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
-
-        //Kéo xuống refresh lại trang
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
         return view;
     }
 }

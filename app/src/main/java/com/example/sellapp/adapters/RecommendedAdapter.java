@@ -1,6 +1,7 @@
 package com.example.sellapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.sellapp.R;
+import com.example.sellapp.activities.DetailedActivity;
+import com.example.sellapp.activities.DetailedRecommendActivity;
 import com.example.sellapp.models.RecommendedModel;
 
 import java.util.List;
@@ -39,6 +42,16 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         holder.name.setText(recList.get(position).getName());
         holder.description.setText(recList.get(position).getDescription());
         holder.rating.setText(recList.get(position).getRating());
+        //khai báo cái item ấy
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetailedRecommendActivity.class);
+                //Lấy miêu tả đặt tên đóng gói
+                i.putExtra("detail", recList.get(position));
+                context.startActivity(i);
+            }
+        });
 
     }
 

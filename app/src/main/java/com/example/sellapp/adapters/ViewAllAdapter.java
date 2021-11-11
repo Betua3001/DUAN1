@@ -49,6 +49,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
 //        if(vaList.get(position).getType().equalsIgnoreCase("fruits")){
 //            holder.price.setText(vaList.get(position).getPrice()+"/kg");
 //        }
+        //Chuyển sang Detailed Activity
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

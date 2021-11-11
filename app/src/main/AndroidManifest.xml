@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sellapp">
         <activity
+            android:name=".activities.NavCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.DetailedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DetailedRecommendActivity"
             android:exported="false" />
         <activity
             android:name=".activities.ViewAllActivity"

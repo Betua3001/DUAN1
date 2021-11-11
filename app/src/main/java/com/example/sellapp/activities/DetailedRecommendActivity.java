@@ -1,9 +1,5 @@
 package com.example.sellapp.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,9 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.bumptech.glide.Glide;
 import com.example.sellapp.R;
-import com.example.sellapp.models.ViewAllModel;
+import com.example.sellapp.models.RecommendedModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,8 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class DetailedActivity extends AppCompatActivity {
-
+public class DetailedRecommendActivity extends AppCompatActivity {
     ImageView detailedImg;
     TextView price, rating, description, quantity;
     //Số lượng mới vô = 1
@@ -35,7 +34,7 @@ public class DetailedActivity extends AppCompatActivity {
     Button addToCart;
     ImageView addItem, removeItem;
     Toolbar toolbar;
-    ViewAllModel vaModel = null;
+    RecommendedModel recModel = null;
 
     //Lấy FirebaseFireStore
     FirebaseFirestore db;
@@ -55,8 +54,8 @@ public class DetailedActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final Object object = getIntent().getSerializableExtra("detail");
-        if (object instanceof ViewAllModel) {
-            vaModel = (ViewAllModel) object;
+        if (object instanceof RecommendedModel) {
+            recModel = (RecommendedModel) object;
         }
 
         quantity = findViewById(R.id.quantity);
@@ -68,14 +67,14 @@ public class DetailedActivity extends AppCompatActivity {
         addItem = findViewById(R.id.add_item);
         removeItem = findViewById(R.id.remove_item);
 
-        if (vaModel != null) {
+        if (recModel != null) {
 
-            Glide.with(getApplicationContext()).load(vaModel.getImg_url()).into(detailedImg);
-            rating.setText(vaModel.getRating());
-            price.setText(getString(R.string.price) + vaModel.getPrice() + "/kg");
-            description.setText(vaModel.getDescription());
+            Glide.with(getApplicationContext()).load(recModel.getImg_url()).into(detailedImg);
+            rating.setText(recModel.getRating());
+            price.setText(getString(R.string.price) + recModel.getPrice() + "/kg");
+            description.setText(recModel.getDescription());
             //Tổng tiền
-            totalPrice = vaModel.getPrice() * totalQuantity;
+            totalPrice = recModel.getPrice() * totalQuantity;
 
             //Chuyển đơn vị tùy ý
 //        if(vaModel.getType().equalsIgnoreCase("fruits")){
@@ -88,6 +87,7 @@ public class DetailedActivity extends AppCompatActivity {
 //        }
 
         }
+
         //Thêm vào giỏ hàng
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +103,7 @@ public class DetailedActivity extends AppCompatActivity {
                 if (totalQuantity < 100) {
                     totalQuantity++;
                     quantity.setText(String.valueOf(totalQuantity));
-                    totalPrice = vaModel.getPrice() * totalQuantity;
+                    totalPrice = recModel.getPrice() * totalQuantity;
                 }
 
             }
@@ -116,7 +116,7 @@ public class DetailedActivity extends AppCompatActivity {
                 if (totalQuantity > 1) {
                     totalQuantity--;
                     quantity.setText(String.valueOf(totalQuantity));
-                    totalPrice = vaModel.getPrice() * totalQuantity;
+                    totalPrice = recModel.getPrice() * totalQuantity;
                 }
 
             }
@@ -136,7 +136,7 @@ public class DetailedActivity extends AppCompatActivity {
 
         final HashMap<String, Object> cartMap = new HashMap<>();
         //Tạo bảng trên FirebaseFirestore
-        cartMap.put("productName", vaModel.getName());
+        cartMap.put("productName", recModel.getName());
         cartMap.put("productPrice", price.getText().toString());
         cartMap.put("currentDate", saveCurrentDate);
         cartMap.put("currentTime", saveCurrentTime);
@@ -147,7 +147,7 @@ public class DetailedActivity extends AppCompatActivity {
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
-                Toast.makeText(DetailedActivity.this, R.string.added_to_cart, Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailedRecommendActivity.this, R.string.added_to_cart, Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

@@ -1,6 +1,8 @@
 package com.example.sellapp.models;
 
-public class RecommendedModel {
+import java.io.Serializable;
+
+public class RecommendedModel implements Serializable {
     String name;
     String img_url;
     String rating;
