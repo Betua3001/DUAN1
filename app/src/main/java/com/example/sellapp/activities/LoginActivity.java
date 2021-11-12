@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.intellij.lang.annotations.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button signIn;
@@ -28,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     ProgressBar progressBar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,9 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password_login);
         signIn = findViewById(R.id.login_btn);
         signUp = findViewById(R.id.sign_up);
+
+
+
         //Chuyển Activity qua đăng ký
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +67,29 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
 
-        if (TextUtils.isEmpty(userEmail)) {
-            Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
-            return;
+//        if (TextUtils.isEmpty(userEmail)) {
+//            Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+
+        if(userEmail.isEmpty()) {
+            Toast.makeText(getApplicationContext(),"Enter email address",Toast.LENGTH_SHORT).show();
+
+        }else {
+            if (userEmail.trim().matches(emailPattern)) {
+                Toast.makeText(getApplicationContext(),"Valid email address",Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
+
+//
         if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
             return;

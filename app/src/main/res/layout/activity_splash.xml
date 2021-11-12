@@ -7,8 +7,6 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".SplashActivity">
-
-
     <ImageView
         android:src="@drawable/shoppingggg"
         android:layout_width="wrap_content"
