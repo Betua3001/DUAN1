@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         recomRec = view.findViewById(R.id.recommended_rec);
         scrollView = view.findViewById(R.id.scroll_view);
         progressBar = view.findViewById(R.id.progressbar);
-        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
+//        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
 
         //
         progressBar.setVisibility(View.VISIBLE);
