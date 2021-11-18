@@ -2,11 +2,16 @@ package com.example.sellapp;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     AppBarConfiguration mAppBarConfiguration;
     FirebaseAuth auth;
     FirebaseDatabase database;
+    ImageView imgLanguages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +60,45 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
+        imgLanguages = findViewById(R.id.img_languages);
+
+
+        imgLanguages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu pop =new PopupMenu(MainActivity.this, imgLanguages);
+                MenuInflater inflater = pop.getMenuInflater();
+                inflater.inflate(R.menu.languages_menu, pop.getMenu());
+                LanguageManager lang = new LanguageManager(MainActivity.this);
+                pop.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.english:
+                                lang.updateResource("en");
+                                recreate();
+                                Toast.makeText(MainActivity.this, "Change to English", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.vietnamese:
+                                lang.updateResource("vi");
+                                recreate();
+                                Toast.makeText(MainActivity.this, "Change to Vietnamese", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.chinese:
+                                lang.updateResource("zh");
+                                recreate();
+                                Toast.makeText(MainActivity.this, "Change to Chinese", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                        }
+                        return false;
+                    }
+                });
+                pop.show();
+            }
+        });
 
 //        View headerView = navigationView.getHeaderView(0);
 //        TextView headerName = headerView.findViewById(R.id.nav_header_name);
@@ -104,4 +149,6 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }

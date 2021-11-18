@@ -5,9 +5,11 @@
         android:title="@string/language_english"
         android:icon="@drawable/english_logo"></item>
 
+
     <item android:id="@+id/vietnamese"
         android:title="@string/language_vietnamese"
         android:icon="@drawable/vietname_logo"></item>
+
 
     <item android:id="@+id/chinese"
         android:title="@string/language_chinese"

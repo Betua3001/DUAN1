@@ -7,6 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+
+    <string name="language_vietnamese">Vietnamese</string>
+    <string name="language_chinese">Chinese</string>
+    <string name="language_english">English</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <!--Đặt tên-->
     <string name="home">Home</string>
