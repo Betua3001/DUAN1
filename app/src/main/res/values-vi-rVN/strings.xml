@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sell App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="language_vietnamese">Vietnamese</string>
+    <string name="language_chinese">Chinese</string>
+    <string name="language_english">English</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--Đặt tên-->
+    <string name="home">Nhà</string>
+    <string name="detailed_toolbar">Sản phẩm chi tiết</string>
+    <string name="description">Sự miêu tả</string>
+    <string name="add_to_cart">Thêm vào giỏ hàng</string>
+    <string name="added_to_cart">Đã thêm vào giỏ hàng</string>
+    <string name="login">Đăng nhập</string>
+    <string name="dont_have_an_account">Không có Tài khoản?</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="already_have_an_account">Bạn co săn san để tạo một tai khoản?</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="registration">Đăng ký</string>
+    <string name="profile">Hồ sơ</string>
+    <string name="category">Loại</string>
+    <string name="offer">Cung cấp</string>
+    <string name="new_product">Sản phẩm mới</string>
+    <string name="my_order">Đơn hàng của tôi</string>
+    <string name="my_cart">Giỏ hàng của tôi</string>
+    <string name="view_all_products">Xem tất cả các sản phẩm</string>
+    <string name="welcome">Chúng tôi rất vui khi có bạn! Hãy sẵn sàng để mua đồ tươi và đồ đông lạnh, hàng tạp hóa và bất cứ thứ gì bạn muốn.</string>
+    <string name="explore_us">Khám phá chúng tôi</string>
+    <string name="welcome_to">Chào mừng bạn đến với ứng dụng mua sắm</string>
+    <string name="popular_products">Sản phẩm phổ biến</string>
+    <string name="recommended">Khuyến khích</string>
+    <string name="explore_products">Khám phá sản phẩm</string>
+    <string name="search">Tìm kiếm mục của bạn ở đây ...</string>
+    <string name="your_carts_is_empty">Giỏ hàng của bạn trống</string>
+    <string name="havent_purchased">Bạn chưa mua được bất cứ thứ gì!</string>
+    <string name="no_new_products">Xin lỗi, không có sản phẩm mới nào!</string>
+    <string name="your_name">Tên của bạn</string>
+    <string name="your_email">Email của bạn</string>
+    <string name="your_address">Địa chỉ của bạn</string>
+    <string name="your_phone">Điện thoại của bạn</string>
+    <string name="price">Giá (VNĐ)</string>
+    <string name="buy_now">Mua ngay</string>
+    <string name="product_name">Tên sản phẩm</string>
+    <string name="product_price">Giá sản phẩm </string>
+    <string name="current_date">Ngay hiện tại:</string>
+    <string name="current_time">Thời điểm hiện tại:</string>
+    <string name="total_price">Tổng giá:</string>
+    <string name="total_quantity">Tổng số lượng</string>
+</resources>

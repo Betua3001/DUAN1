@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sell App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="language_vietnamese">Vietnamese</string>
+    <string name="language_chinese">Chinese</string>
+    <string name="language_english">English</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--Đặt tên-->
+    <string name="home">家</string>
+    <string name="detailed_toolbar">詳細產品</string>
+    <string name="description">描述</string>
+    <string name="add_to_cart">添加到購物車</string>
+    <string name="added_to_cart">加入購物車</string>
+    <string name="login">登錄</string>
+    <string name="dont_have_an_account">還沒有帳戶？</string>
+    <string name="sign_up">報名</string>
+    <string name="already_have_an_account">已有賬號？</string>
+    <string name="sign_in">登入</string>
+    <string name="registration">登記</string>
+    <string name="profile">輪廓</string>
+    <string name="category">類別</string>
+    <string name="offer">提供</string>
+    <string name="new_product">新產品</string>
+    <string name="my_order">我的訂單</string>
+    <string name="my_cart">我的車</string>
+    <string name="view_all_products">查看所有產品</string>
+    <string name="welcome">我們很高興有你！準備好購買新鮮和冷凍食品、雜貨和任何你想要的東西。</string>
+    <string name="explore_us">探索我們</string>
+    <string name="welcome_to">歡迎使用購物應用程序</string>
+    <string name="popular_products">熱門產品</string>
+    <string name="recommended">受到推崇的</string>
+    <string name="explore_products">探索產品</string>
+    <string name="search">在這裡搜索您的項目...</string>
+    <string name="your_carts_is_empty">您的購物車是空的</string>
+    <string name="havent_purchased">您還沒有購買任何東西！</string>
+    <string name="no_new_products">抱歉 暫無新產品！</string>
+    <string name="your_name">你的名字</string>
+    <string name="your_email">你的郵件</string>
+    <string name="your_address">你的地址</string>
+    <string name="your_phone">您的手機</string>
+    <string name="price">價格(VNĐ)</string>
+    <string name="buy_now">立即購買</string>
+    <string name="product_name">產品名稱</string>
+    <string name="product_price">產品價格 :</string>
+    <string name="current_date">當前的日期：</string>
+    <string name="current_time">當前時間：</string>
+    <string name="total_price">總價：</string>
+    <string name="total_quantity">總數（量</string>
+</resources>
