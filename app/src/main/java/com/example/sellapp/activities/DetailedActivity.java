@@ -86,7 +86,6 @@ public class DetailedActivity extends AppCompatActivity {
 //            holder.price.setText(vaList.get(position).getPrice()+"/kg");
 //            totalPrice = vaModel.getPrice() * totalQuantity;
 //        }
-
         }
         //Thêm vào giỏ hàng
         addToCart.setOnClickListener(new View.OnClickListener() {
@@ -143,8 +142,8 @@ public class DetailedActivity extends AppCompatActivity {
         cartMap.put("totalQuantity", quantity.getText().toString());
         cartMap.put("totalPrice", totalPrice);
         //Lấy thông tin từ FireStore
-        db.collection("AddToCart").document(auth.getCurrentUser().getUid())
-                .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                .collection("AddToCart").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 Toast.makeText(DetailedActivity.this, R.string.added_to_cart, Toast.LENGTH_SHORT).show();

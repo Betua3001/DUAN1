@@ -1,5 +1,6 @@
 package com.example.sellapp.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.example.sellapp.R;
 import com.example.sellapp.activities.DetailedActivity;
 import com.example.sellapp.activities.NavCategoryActivity;
 import com.example.sellapp.models.NavCategoryDetailedModel;
+import com.example.sellapp.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -125,6 +127,7 @@ public class NavCategoryDetailedAdapter extends RecyclerView.Adapter<NavCategory
 //                @Override
 //                public void onComplete(@NonNull Task<DocumentReference> task) {
 //                    Toast.makeText(context, R.string.added_to_cart, Toast.LENGTH_SHORT).show();
+//                    ((Activity)context).finish();
 //                }
 //            });
 //        }

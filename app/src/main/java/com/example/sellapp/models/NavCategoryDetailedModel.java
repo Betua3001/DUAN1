@@ -1,6 +1,6 @@
 package com.example.sellapp.models;
 
-public class NavCategoryDetailedModel {
+public class NavCategoryDetailedModel{
 
     String name;
     String img_url;

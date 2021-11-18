@@ -15,11 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sellapp.R;
+import com.example.sellapp.activities.PlacedOrderActivity;
 import com.example.sellapp.adapters.MyCartAdapter;
 import com.example.sellapp.models.MyCartModel;;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +31,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +43,7 @@ public class MyCartFragment extends Fragment {
     List<MyCartModel> mcList;
     TextView totalAmount;
     ProgressBar progressBar;
+    Button buyNow;
 
     FirebaseFirestore db;
     FirebaseAuth auth;
@@ -49,6 +53,7 @@ public class MyCartFragment extends Fragment {
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_my_cart, container, false);
         totalAmount = view.findViewById(R.id.total_amount);
+        buyNow = view.findViewById(R.id.buy_now);
         //Lấy firebase (auth là Authentication)
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -65,13 +70,18 @@ public class MyCartFragment extends Fragment {
         mcAdapter = new MyCartAdapter(getActivity(),mcList);
         recyclerView.setAdapter(mcAdapter);
 
-        db.collection("AddToCart").document(auth.getCurrentUser().getUid())
-                .collection("CurrentUser").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                .collection("AddToCart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (DocumentSnapshot document : task.getResult().getDocuments()) {
+
+                        String documentId = document.getId();
+
                         MyCartModel mcModel = document.toObject(MyCartModel.class);
+
+                        mcModel.setDocumentId(documentId);
                         mcList.add(mcModel);
                         mcAdapter.notifyDataSetChanged();
                         progressBar.setVisibility(View.GONE);
@@ -83,11 +93,24 @@ public class MyCartFragment extends Fragment {
             }
         });
 
+        buyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), PlacedOrderActivity.class);
+                i.putExtra("itemList", (Serializable) mcList);
+                startActivity(i);
+            }
+        });
+
+        //Truyền dữ liệu
         LocalBroadcastManager.getInstance(getActivity())
                 .registerReceiver(mReceiver, new IntentFilter("MyTotalAmount"));
+
+
         return view;
     }
 
+    //Hiện tổng tiền
     public BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

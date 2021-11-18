@@ -70,27 +70,17 @@ public class RegistrationActivity extends AppCompatActivity {
         String userName = name.getText().toString();
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
-
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
         //Bắt lỗi
         if (TextUtils.isEmpty(userName)) {
             Toast.makeText(this, "Name is Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
-//    Bắt lỗi email
-        if(userEmail.isEmpty()) {
-            Toast.makeText(getApplicationContext(),"Enter email address",Toast.LENGTH_SHORT).show();
 
-        }else {
-            if (userEmail.trim().matches(emailPattern)) {
-                Toast.makeText(getApplicationContext(),"Valid email address",Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
-            }
-
+        if (TextUtils.isEmpty(userEmail)) {
+            Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
+            return;
         }
-//
+
         if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
             return;
