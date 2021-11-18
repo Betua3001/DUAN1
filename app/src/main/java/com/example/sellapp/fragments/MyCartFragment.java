@@ -41,7 +41,7 @@ public class MyCartFragment extends Fragment {
     RecyclerView recyclerView;
     MyCartAdapter mcAdapter;
     List<MyCartModel> mcList;
-    TextView totalAmount;
+    TextView overTotalAmount;
     ProgressBar progressBar;
     Button buyNow;
 
@@ -52,7 +52,7 @@ public class MyCartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_my_cart, container, false);
-        totalAmount = view.findViewById(R.id.total_amount);
+        overTotalAmount = view.findViewById(R.id.total_amount);
         buyNow = view.findViewById(R.id.buy_now);
         //Lấy firebase (auth là Authentication)
         auth = FirebaseAuth.getInstance();
@@ -87,9 +87,13 @@ public class MyCartFragment extends Fragment {
                         progressBar.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }
-                } else {
-                    Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
+
+                    calculateTotalAmount(mcList);
+
                 }
+//                } else {
+//                    Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
@@ -102,21 +106,15 @@ public class MyCartFragment extends Fragment {
             }
         });
 
-        //Truyền dữ liệu
-        LocalBroadcastManager.getInstance(getActivity())
-                .registerReceiver(mReceiver, new IntentFilter("MyTotalAmount"));
-
-
         return view;
     }
 
-    //Hiện tổng tiền
-    public BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            int totalBill = intent.getIntExtra("totalAmount", 0);
-            totalAmount.setText("Total Bill: "+totalBill+" VNĐ");
+    private void calculateTotalAmount(List<MyCartModel> mcList) {
+        double totalAmount = 0.0 ;
+        for (MyCartModel myCartModel : mcList){
+            totalAmount += myCartModel.getTotalPrice();
         }
-    };
+        overTotalAmount.setText("Total Bill: "+ totalAmount + " VNĐ");
+    }
 
 }
