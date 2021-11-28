@@ -2,13 +2,18 @@ package com.example.sellapp.models;
 
 public class HomeCategoryModel {
     String name;
-    String img_url;
+    int img_url;
     String type;
 
-    public HomeCategoryModel(String name, String img_url, String type) {
+    public HomeCategoryModel(String name, int img_url, String type) {
         this.name = name;
         this.img_url = img_url;
         this.type = type;
+    }
+
+    public HomeCategoryModel(String name, int img_url) {
+        this.name = name;
+        this.img_url = img_url;
     }
 
     public HomeCategoryModel() {
@@ -22,11 +27,11 @@ public class HomeCategoryModel {
         this.name = name;
     }
 
-    public String getImg_url() {
+    public int getImg_url() {
         return img_url;
     }
 
-    public void setImg_url(String img_url) {
+    public void setImg_url(int img_url) {
         this.img_url = img_url;
     }
 

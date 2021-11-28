@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/english"
-        android:title="@string/language_english"
-        android:icon="@drawable/english_logo"></item>
+        <item
+            android:id="@+id/english"
+            android:icon="@drawable/english_logo"
+            android:title="@string/language_english" />
 
+        <item
+            android:id="@+id/vietnamese"
+            android:icon="@drawable/vietname_logo"
+            android:title="@string/language_vietnamese" />
 
-    <item android:id="@+id/vietnamese"
-        android:title="@string/language_vietnamese"
-        android:icon="@drawable/vietname_logo"></item>
-
-
-    <item android:id="@+id/chinese"
-        android:title="@string/language_chinese"
-        android:icon="@drawable/chinese_logo"></item>
+        <item
+            android:id="@+id/chinese"
+            android:icon="@drawable/chinese_logo"
+            android:title="@string/language_chinese" />
 </menu>

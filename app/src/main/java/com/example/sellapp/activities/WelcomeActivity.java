@@ -11,19 +11,20 @@ import android.widget.Toast;
 import com.example.sellapp.MainActivity;
 import com.example.sellapp.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends AppCompatActivity {
     ProgressBar progressBar;
-    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        auth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
-        if (auth.getCurrentUser() != null) {
+        if (user != null) {
             progressBar.setVisibility(View.VISIBLE);
             startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
             Toast.makeText(this, "Please wait you are already logged in", Toast.LENGTH_SHORT).show();

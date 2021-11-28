@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompat {
 
     Toolbar toolbar;
     NavigationView navView;

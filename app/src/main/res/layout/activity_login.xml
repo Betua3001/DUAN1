@@ -90,11 +90,13 @@
         android:layout_height="wrap_content"
         android:text="@string/dont_have_an_account"
         android:textStyle="bold"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:layout_constraintVertical_bias=".2" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/sign_up"
