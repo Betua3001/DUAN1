@@ -74,6 +74,90 @@ public class ViewAllActivity extends AppCompatActivity {
                 }
             });
         }
+        //Getting Rice
+        if (type != null && type.equalsIgnoreCase("com")) {
+            db.collection("AllProducts").whereEqualTo("type", "com").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+
+                        ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
+                        vaModelList.add(vaModel);
+                        vaAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+        //Getting Hutieu
+        if (type != null && type.equalsIgnoreCase("monnuoc")) {
+            db.collection("AllProducts").whereEqualTo("type", "monnuoc").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+
+                        ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
+                        vaModelList.add(vaModel);
+                        vaAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+        //Getting Sữa
+        if (type != null && type.equalsIgnoreCase("milk")) {
+            db.collection("AllProducts").whereEqualTo("type", "milk").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+
+                        ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
+                        vaModelList.add(vaModel);
+                        vaAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+        //Getting Fast Food
+        if (type != null && type.equalsIgnoreCase("fastfood")) {
+            db.collection("AllProducts").whereEqualTo("type", "fastfood").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+
+                        ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
+                        vaModelList.add(vaModel);
+                        vaAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+        //Getting Meat
+        if (type != null && type.equalsIgnoreCase("meat")) {
+            db.collection("AllProducts").whereEqualTo("type", "meat").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+
+                        ViewAllModel vaModel = documentSnapshot.toObject(ViewAllModel.class);
+                        vaModelList.add(vaModel);
+                        vaAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        rv.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
     }
 }
