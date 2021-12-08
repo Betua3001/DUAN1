@@ -1,8 +1,10 @@
 package com.example.sellapp.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,7 +82,7 @@ public class ProfileFragment extends Fragment {
                 Intent i = new Intent();
                 i.setAction(Intent.ACTION_GET_CONTENT);
                 i.setType("image/*");
-                startActivityForResult(i,33);
+                startActivityForResult(i, 33);
             }
         });
 
@@ -93,6 +95,7 @@ public class ProfileFragment extends Fragment {
 
         return view;
     }
+
     private void updateUserProfile() {
 
     }
